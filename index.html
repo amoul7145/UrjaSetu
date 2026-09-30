@@ -1,74 +1,1192 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>UrjaSetu | CaseArmor | SIH26120</title>
+
 <style>
-:root{--navy:#111e38;--blue:#215bd6;--mint:#11a889;--ink:#182744;--muted:#63728a;--bg:#f3f6fb;--line:#dce4f1}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,Segoe UI,Arial}
-header{background:linear-gradient(115deg,#111d37,#1d3f79);color:white;padding:19px max(20px,calc((100vw - 1190px)/2));display:flex;justify-content:space-between;align-items:center;gap:12px}
-.brand{font-size:25px;font-weight:850;letter-spacing:-.8px}.brand span{color:#67e5ce}.tiny{font-size:12px;color:#bfd2f2}.team{background:#ffffff1e;border:1px solid #ffffff55;padding:8px 16px;border-radius:30px;font-weight:700}
-main{max-width:1190px;margin:auto;padding:24px 18px 70px}
-.hero{background:linear-gradient(125deg,#18365e,#265cc2);color:white;padding:27px 32px;border-radius:20px;display:grid;grid-template-columns:1.5fr 1fr;gap:25px;align-items:center;box-shadow:0 10px 30px #24447b20}
-.hero h1{font-size:clamp(25px,3vw,38px);line-height:1.12;margin:6px 0 10px}.hero p{color:#e1edff;max-width:660px}.chip{display:inline-block;background:#d5f8eb;color:#08684d;padding:4px 11px;border-radius:30px;font-size:12px;font-weight:800}
-.hero .chip{background:#ffffff24;color:#e6fff7;border:1px solid #ffffff55}
-.well-art{background:#ffffff12;border:1px solid #ffffff3b;border-radius:16px;padding:14px}
-.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0}.tab{background:white;border:1px solid var(--line);border-radius:11px;padding:11px 17px;cursor:pointer;font-weight:750;color:#425675}.tab.active{background:#2059c7;color:white}
-.panel{display:none}.panel.active{display:block}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:white;border:1px solid var(--line);border-radius:17px;padding:20px;box-shadow:0 5px 17px #142b4b09}.card h2{font-size:18px;margin:0 0 9px}.card p{color:var(--muted);margin:5px 0}.metric{font-size:29px;font-weight:850;color:#174da7;margin:9px 0 2px}.caption{font-size:12px;color:var(--muted)}
-.flow{display:flex;align-items:stretch;gap:10px;margin:15px 0;flex-wrap:wrap}.flow .step{flex:1;min-width:160px;padding:16px;border:1px solid #b8d6f6;border-radius:14px;background:#eaf4ff}.step strong{display:block;font-size:16px}.step small{color:#45637e}.arrow{align-self:center;color:#3976b8;font-size:24px;font-weight:bold}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:17px}.three{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-.controls label{display:block;font-weight:700;margin:16px 0 5px}.range-row{display:flex;gap:15px;align-items:center}.range-row input{flex:1;accent-color:#205bd1}.range-row output{min-width:54px;text-align:right;color:#1454ba;font-weight:850}.help{font-size:13px;color:var(--muted)}
-button.action{background:#205bd1;color:white;border:0;border-radius:10px;padding:12px 17px;font-weight:750;cursor:pointer;margin-top:14px}
-button.secondary{background:white;color:#205bd1;border:1px solid #205bd1}.pill{display:inline-block;border-radius:8px;background:#e4f6ee;color:#16714b;font-size:12px;font-weight:750;padding:4px 9px}
-.notice{background:#fff5e2;border:1px solid #f3d18b;border-radius:12px;padding:13px 17px;margin:18px 0;color:#795018}
-.chart{width:100%;height:250px;display:block;overflow:visible}.legend{font-size:12px;color:#60728c}.legend i{display:inline-block;width:12px;height:3px;background:#205bd1;vertical-align:middle;margin-right:5px}.legend .green{background:#16a78d}
-table{border-collapse:collapse;width:100%;font-size:14px}td,th{border-bottom:1px solid var(--line);padding:11px;text-align:left}th{background:#eef4fd}
-footer{text-align:center;color:#6b7890;font-size:12px;margin-top:35px}
-@media(max-width:760px){.hero,.two,.three,.grid{grid-template-columns:1fr}.hero{padding:22px}.well-art{display:none}.arrow{display:none}.flow{display:grid}.tab{flex:1;padding:10px}.card{padding:16px}header{padding:16px}.brand{font-size:20px}}
-</style></head><body>
-<header><div><div class="brand">Urja<span>Setu</span> <span style="font-size:12px;font-weight:500;color:#c8dbff">PROOF OF CONCEPT</span></div><div class="tiny">SIH26120 · Oil-well digital twin concept</div></div><div class="team">CaseArmor · 157633</div></header>
+:root{
+  --navy:#111e38;
+  --blue:#215bd6;
+  --mint:#11a889;
+  --ink:#182744;
+  --muted:#63728a;
+  --bg:#f3f6fb;
+  --line:#dce4f1
+}
+
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font:15px/1.5 system-ui,-apple-system,Segoe UI,Arial
+}
+
+header{
+  background:linear-gradient(115deg,#111d37,#1d3f79);
+  color:white;
+  padding:19px max(20px,calc((100vw - 1190px)/2));
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px
+}
+
+.brand{
+  font-size:25px;
+  font-weight:850;
+  letter-spacing:-.8px
+}
+
+.brand span{color:#67e5ce}
+
+.tiny{
+  font-size:12px;
+  color:#bfd2f2
+}
+
+.team{
+  background:#ffffff1e;
+  border:1px solid #ffffff55;
+  padding:8px 16px;
+  border-radius:30px;
+  font-weight:700
+}
+
+main{
+  max-width:1190px;
+  margin:auto;
+  padding:24px 18px 70px
+}
+
+.hero{
+  background:linear-gradient(125deg,#18365e,#265cc2);
+  color:white;
+  padding:27px 32px;
+  border-radius:20px;
+  display:grid;
+  grid-template-columns:1.5fr 1fr;
+  gap:25px;
+  align-items:center;
+  box-shadow:0 10px 30px #24447b20
+}
+
+.hero h1{
+  font-size:clamp(25px,3vw,38px);
+  line-height:1.12;
+  margin:6px 0 10px
+}
+
+.hero p{
+  color:#e1edff;
+  max-width:660px
+}
+
+.chip{
+  display:inline-block;
+  background:#d5f8eb;
+  color:#08684d;
+  padding:4px 11px;
+  border-radius:30px;
+  font-size:12px;
+  font-weight:800
+}
+
+.hero .chip{
+  background:#ffffff24;
+  color:#e6fff7;
+  border:1px solid #ffffff55
+}
+
+.well-art{
+  background:#ffffff12;
+  border:1px solid #ffffff3b;
+  border-radius:16px;
+  padding:14px
+}
+
+.tabs{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin:22px 0
+}
+
+.tab{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:11px;
+  padding:11px 17px;
+  cursor:pointer;
+  font-weight:750;
+  color:#425675
+}
+
+.tab.active{
+  background:#2059c7;
+  color:white
+}
+
+.panel{display:none}
+.panel.active{display:block}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px
+}
+
+.card{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:17px;
+  padding:20px;
+  box-shadow:0 5px 17px #142b4b09
+}
+
+.card h2{
+  font-size:18px;
+  margin:0 0 9px
+}
+
+.card p{
+  color:var(--muted);
+  margin:5px 0
+}
+
+.metric{
+  font-size:29px;
+  font-weight:850;
+  color:#174da7;
+  margin:9px 0 2px
+}
+
+.caption{
+  font-size:12px;
+  color:var(--muted)
+}
+
+.flow{
+  display:flex;
+  align-items:stretch;
+  gap:10px;
+  margin:15px 0;
+  flex-wrap:wrap
+}
+
+.flow .step{
+  flex:1;
+  min-width:160px;
+  padding:16px;
+  border:1px solid #b8d6f6;
+  border-radius:14px;
+  background:#eaf4ff
+}
+
+.step strong{
+  display:block;
+  font-size:16px
+}
+
+.step small{
+  color:#45637e
+}
+
+.arrow{
+  align-self:center;
+  color:#3976b8;
+  font-size:24px;
+  font-weight:bold
+}
+
+.two{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:17px
+}
+
+.three{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px
+}
+
+.controls label{
+  display:block;
+  font-weight:700;
+  margin:16px 0 5px
+}
+
+.range-row{
+  display:flex;
+  gap:15px;
+  align-items:center
+}
+
+.range-row input{
+  flex:1;
+  accent-color:#205bd1
+}
+
+.range-row output{
+  min-width:54px;
+  text-align:right;
+  color:#1454ba;
+  font-weight:850
+}
+
+.help{
+  font-size:13px;
+  color:var(--muted)
+}
+
+button.action{
+  background:#205bd1;
+  color:white;
+  border:0;
+  border-radius:10px;
+  padding:12px 17px;
+  font-weight:750;
+  cursor:pointer;
+  margin-top:14px
+}
+
+button.secondary{
+  background:white;
+  color:#205bd1;
+  border:1px solid #205bd1
+}
+
+.pill{
+  display:inline-block;
+  border-radius:8px;
+  background:#e4f6ee;
+  color:#16714b;
+  font-size:12px;
+  font-weight:750;
+  padding:4px 9px
+}
+
+.notice{
+  background:#fff5e2;
+  border:1px solid #f3d18b;
+  border-radius:12px;
+  padding:13px 17px;
+  margin:18px 0;
+  color:#795018
+}
+
+.chart{
+  width:100%;
+  height:250px;
+  display:block;
+  overflow:visible
+}
+
+.legend{
+  font-size:12px;
+  color:#60728c
+}
+
+.legend i{
+  display:inline-block;
+  width:12px;
+  height:3px;
+  background:#205bd1;
+  vertical-align:middle;
+  margin-right:5px
+}
+
+.legend .green{
+  background:#16a78d
+}
+
+table{
+  border-collapse:collapse;
+  width:100%;
+  font-size:14px
+}
+
+td,th{
+  border-bottom:1px solid var(--line);
+  padding:11px;
+  text-align:left
+}
+
+th{
+  background:#eef4fd
+}
+
+footer{
+  text-align:center;
+  color:#6b7890;
+  font-size:12px;
+  margin-top:35px
+}
+
+@media(max-width:760px){
+  .hero,.two,.three,.grid{
+    grid-template-columns:1fr
+  }
+
+  .hero{
+    padding:22px
+  }
+
+  .well-art{
+    display:none
+  }
+
+  .arrow{
+    display:none
+  }
+
+  .flow{
+    display:grid
+  }
+
+  .tab{
+    flex:1;
+    padding:10px
+  }
+
+  .card{
+    padding:16px
+  }
+
+  header{
+    padding:16px
+  }
+
+  .brand{
+    font-size:20px
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div>
+    <div class="brand">
+      Urja<span>Setu</span>
+      <span style="font-size:12px;font-weight:500;color:#c8dbff">
+        PROOF OF CONCEPT
+      </span>
+    </div>
+    <div class="tiny">SIH26120 · Oil-well digital twin concept</div>
+  </div>
+
+  <div class="team">CaseArmor · 157633</div>
+</header>
+
 <main>
-<section class="hero"><div><span class="chip">INTERACTIVE DEMONSTRATION · SYNTHETIC DATA</span><h1>Understand an oil well before changing the real one.</h1><p>Explore a simple computer model of a thick-oil well. Change imaginary heating and pump settings, then see how the simulated results change.</p><span style="font-size:13px;color:#cde0ff">No real well is connected. This is an educational prototype, not an engineering prediction or operating recommendation.</span></div>
-<div class="well-art"><svg viewBox="0 0 360 225" role="img" aria-label="Simplified drawing of a well with steam heating and a pump" style="width:100%;height:auto"><rect x="0" y="98" width="360" height="127" rx="8" fill="#b8a18a"/><rect x="0" y="152" width="360" height="73" rx="8" fill="#d7ac65"/><path d="M130 0v175q0 30 42 30h45" stroke="#f7fafc" stroke-width="20" fill="none"/><path d="M130 0v175q0 30 42 30h45" stroke="#df7542" stroke-width="10" fill="none" stroke-dasharray="10 8"/><path d="M258 205V40" stroke="#e7f7ff" stroke-width="20"/><path d="M258 205V40" stroke="#1b7bb7" stroke-width="9"/><rect x="230" y="15" width="57" height="30" rx="8" fill="#72d9c1"/><text x="235" y="35" font-size="14" fill="#113e4b" font-weight="bold">PUMP</text><text x="55" y="28" font-size="14" fill="#e6f4ff">Steam</text><path d="M86 33h37" stroke="#f7dcb2" stroke-width="3" marker-end="url(#arr)"/><text x="279" y="94" font-size="14" fill="#e6f4ff">Oil up</text><path d="M274 115v-30" stroke="#9df6db" stroke-width="3" marker-end="url(#arr)"/><text x="35" y="190" font-size="14" fill="#423024">Thick oil underground</text><defs><marker id="arr" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0 0L8 4L0 8z" fill="#e6f4ff"/></marker></defs></svg></div></section>
-<div class="tabs" role="tablist"><button class="tab active" data-tab="overview">1 · Understand</button><button class="tab" data-tab="simulator">2 · Try the simulator</button><button class="tab" data-tab="explain">3 · How it works</button></div>
-<section class="panel active" id="overview">
-<div class="card"><h2>The problem in three pictures</h2><div class="flow"><div class="step"><strong>🌡️ 1. Thick oil</strong><small>Some underground oil is difficult to move when it is cool.</small></div><div class="arrow">→</div><div class="step"><strong>♨️ 2. Heating</strong><small>Steam can warm the underground area and help the oil flow.</small></div><div class="arrow">→</div><div class="step"><strong>⚙️ 3. Pumping</strong><small>A pump brings oil to the surface. Heating and pumping affect one another.</small></div></div><p>Engineers need to understand these connected changes. A digital twin is a computer model that represents them using measurements and equations. This demo shows the idea with deliberately simplified example calculations.</p></div>
-<div class="three" style="margin-top:16px"><div class="card"><span class="pill">INPUT</span><h2>Well data</h2><p>In a future real system: temperatures, steam records, oil production and pump measurements.</p></div><div class="card"><span class="pill">MODEL</span><h2>Digital twin</h2><p>Calculations connect the underground heating, oil movement and pump behaviour.</p></div><div class="card"><span class="pill">OUTPUT</span><h2>Clear dashboard</h2><p>Charts show what the model predicts, so an engineer can compare possible scenarios.</p></div></div>
-<div class="notice"><strong>What is working here?</strong> The sliders, charts and scenario comparison work with fictional data and toy equations. There is no real-time field connection, trained AI or validated petroleum model.</div>
+
+<section class="hero">
+
+  <div>
+    <span class="chip">
+      INTERACTIVE DEMONSTRATION · SYNTHETIC DATA
+    </span>
+
+    <h1>
+      Understand an oil well before changing the real one.
+    </h1>
+
+    <p>
+      Explore a simple computer model of a thick-oil well.
+      Change imaginary heating and pump settings, then see how
+      the simulated results change.
+    </p>
+
+    <span style="font-size:13px;color:#cde0ff">
+      No real well is connected. This is an educational prototype,
+      not an engineering prediction or operating recommendation.
+    </span>
+  </div>
+
+  <div class="well-art">
+
+    <svg viewBox="0 0 360 225"
+         role="img"
+         aria-label="Simplified drawing of a well with steam heating and a pump"
+         style="width:100%;height:auto">
+
+      <rect x="0" y="98" width="360" height="127"
+            rx="8" fill="#b8a18a"/>
+
+      <rect x="0" y="152" width="360" height="73"
+            rx="8" fill="#d7ac65"/>
+
+      <path d="M130 0v175q0 30 42 30h45"
+            stroke="#f7fafc"
+            stroke-width="20"
+            fill="none"/>
+
+      <path d="M130 0v175q0 30 42 30h45"
+            stroke="#df7542"
+            stroke-width="10"
+            fill="none"
+            stroke-dasharray="10 8"/>
+
+      <path d="M258 205V40"
+            stroke="#e7f7ff"
+            stroke-width="20"/>
+
+      <path d="M258 205V40"
+            stroke="#1b7bb7"
+            stroke-width="9"/>
+
+      <rect x="230" y="15"
+            width="57"
+            height="30"
+            rx="8"
+            fill="#72d9c1"/>
+
+      <text x="235" y="35"
+            font-size="14"
+            fill="#113e4b"
+            font-weight="bold">
+        PUMP
+      </text>
+
+      <text x="55" y="28"
+            font-size="14"
+            fill="#e6f4ff">
+        Steam
+      </text>
+
+      <path d="M86 33h37"
+            stroke="#f7dcb2"
+            stroke-width="3"
+            marker-end="url(#arr)"/>
+
+      <text x="279" y="94"
+            font-size="14"
+            fill="#e6f4ff">
+        Oil up
+      </text>
+
+      <path d="M274 115v-30"
+            stroke="#9df6db"
+            stroke-width="3"
+            marker-end="url(#arr)"/>
+
+      <text x="35" y="190"
+            font-size="14"
+            fill="#423024">
+        Thick oil underground
+      </text>
+
+      <defs>
+        <marker id="arr"
+                markerWidth="8"
+                markerHeight="8"
+                refX="4"
+                refY="4"
+                orient="auto">
+          <path d="M0 0L8 4L0 8z"
+                fill="#e6f4ff"/>
+        </marker>
+      </defs>
+
+    </svg>
+
+  </div>
+
 </section>
-<section class="panel" id="simulator">
-<div class="two">
-<div class="card controls"><h2>🎛️ Try changing a pretend well</h2><p>These are abstract demo controls from 0–100, <strong>not real engineering settings</strong>.</p>
-<label for="heat">Illustrative heating level</label><div class="range-row"><input id="heat" type="range" min="0" max="100" value="55"><output id="heatval">55</output></div><div class="help">Higher means more warming in this imaginary model.</div>
-<label for="pump">Illustrative pump activity</label><div class="range-row"><input id="pump" type="range" min="0" max="100" value="55"><output id="pumpval">55</output></div><div class="help">Higher means more pump activity in the demo.</div>
-<label for="retain">Illustrative heat retention</label><div class="range-row"><input id="retain" type="range" min="0" max="100" value="55"><output id="retainval">55</output></div><div class="help">How slowly the pretend underground area cools.</div>
-<button class="action" id="save">Save these as Scenario A</button> <button class="action secondary" id="reset">Reset demo</button>
+
+<div class="tabs" role="tablist">
+
+  <button class="tab active" data-tab="overview">
+    1 · Understand
+  </button>
+
+  <button class="tab" data-tab="simulator">
+    2 · Try the simulator
+  </button>
+
+  <button class="tab" data-tab="explain">
+    3 · How it works
+  </button>
+
 </div>
-<div class="card"><h2>📊 What the pretend model shows</h2><div class="grid" style="grid-template-columns:repeat(2,1fr);gap:10px">
-<div style="background:#eaf2ff;border-radius:12px;padding:14px"><div class="caption">Warmth index</div><div class="metric" id="warm">—</div><div class="caption">Demo points, not °C</div></div>
-<div style="background:#eaf8f3;border-radius:12px;padding:14px"><div class="caption">Flow index</div><div class="metric" id="flow">—</div><div class="caption">Demo points, not barrels</div></div>
-<div style="background:#fff5e7;border-radius:12px;padding:14px"><div class="caption">Energy index</div><div class="metric" id="energy">—</div><div class="caption">Illustrative only</div></div>
-<div style="background:#f1edff;border-radius:12px;padding:14px"><div class="caption">Pump load index</div><div class="metric" id="load">—</div><div class="caption">Illustrative only</div></div></div>
-<p id="explanation" style="margin-top:15px;background:#f1f5fb;padding:13px;border-radius:10px;color:#263d5d"></p>
-</div></div>
-<div class="two" style="margin-top:16px"><div class="card"><h2>Illustrative cooling over five steps</h2><svg id="chart" class="chart" viewBox="0 0 480 240" aria-label="Synthetic cooling chart"></svg><div class="legend"><i></i> Your current scenario <span id="legendA" style="display:none">　<i class="green"></i> Saved Scenario A</span></div></div>
-<div class="card"><h2>Scenario comparison</h2><p>Save Scenario A, then change the sliders to create Scenario B.</p><table><thead><tr><th>Demo index</th><th>Saved A</th><th>Current B</th></tr></thead><tbody id="comparison"><tr><td colspan="3">Save Scenario A to begin.</td></tr></tbody></table><div class="notice" style="font-size:12px">Different numbers show that the demo responds to your choices. They do not establish which real-world operating settings are better.</div></div></div>
+
+
+<section class="panel active" id="overview">
+
+  <div class="card">
+
+    <h2>The problem in three pictures</h2>
+
+    <div class="flow">
+
+      <div class="step">
+        <strong>🌡️ 1. Thick oil</strong>
+        <small>
+          Some underground oil is difficult to move when it is cool.
+        </small>
+      </div>
+
+      <div class="arrow">→</div>
+
+      <div class="step">
+        <strong>♨️ 2. Heating</strong>
+        <small>
+          Steam can warm the underground area and help the oil flow.
+        </small>
+      </div>
+
+      <div class="arrow">→</div>
+
+      <div class="step">
+        <strong>⚙️ 3. Pumping</strong>
+        <small>
+          A pump brings oil to the surface. Heating and pumping affect one another.
+        </small>
+      </div>
+
+    </div>
+
+    <p>
+      Engineers need to understand these connected changes.
+      A digital twin is a computer model that represents them
+      using measurements and equations. This demo shows the idea
+      with deliberately simplified example calculations.
+    </p>
+
+  </div>
+
+
+  <div class="three" style="margin-top:16px">
+
+    <div class="card">
+      <span class="pill">INPUT</span>
+      <h2>Well data</h2>
+      <p>
+        In a future real system: temperatures, steam records,
+        oil production and pump measurements.
+      </p>
+    </div>
+
+    <div class="card">
+      <span class="pill">MODEL</span>
+      <h2>Digital twin</h2>
+      <p>
+        Calculations connect the underground heating,
+        oil movement and pump behaviour.
+      </p>
+    </div>
+
+    <div class="card">
+      <span class="pill">OUTPUT</span>
+      <h2>Clear dashboard</h2>
+      <p>
+        Charts show what the model predicts,
+        so an engineer can compare possible scenarios.
+      </p>
+    </div>
+
+  </div>
+
 </section>
-<section class="panel" id="explain"><div class="card"><h2>🔍 What happens behind the screen?</h2><div class="flow"><div class="step"><strong>1. Enter data</strong><small>You move the three sliders. In a future real project, sensors and historical records would provide the data.</small></div><div class="arrow">→</div><div class="step"><strong>2. Run a model</strong><small>Simple demonstration formulas update the warmth, flow and energy indexes.</small></div><div class="arrow">→</div><div class="step"><strong>3. See the result</strong><small>The charts and numbers update instantly so you can compare two imaginary scenarios.</small></div></div></div>
-<div class="two" style="margin-top:16px"><div class="card"><h2>What technology is used here?</h2><table><tr><th>Technology</th><th>Simple purpose</th></tr><tr><td>HTML</td><td>Creates the page and buttons.</td></tr><tr><td>CSS</td><td>Makes the dashboard attractive and mobile-friendly.</td></tr><tr><td>JavaScript</td><td>Runs the sliders, sample calculations and charts directly in your browser.</td></tr><tr><td>SVG</td><td>Draws the oil-well picture and line graph.</td></tr></table><p>This version works offline. It doesn't need a server, login or installation.</p></div>
-<div class="card"><h2>What a real digital twin would still need</h2><p><strong>Real data:</strong> measurements and operating history from an oil well.</p><p><strong>Engineering model:</strong> verified calculations for underground heating, fluid movement and pump behaviour.</p><p><strong>Validation:</strong> checking predicted values against real measurements and expert review.</p><p><strong>Future AI:</strong> only after suitable training data and meaningful testing are available.</p><p><strong>Secure deployment:</strong> access controls, reliable data connections and safety review.</p></div></div>
-<div class="notice"><strong>For SIH judges:</strong> Present this as a browser-based, interactive <em>concept prototype</em> of the digital-twin workflow. Do not describe its demo indexes as actual oil production, pump health, optimized settings or measured cost savings.</div>
+
+
+<section class="panel" id="simulator">
+
+<div class="two">
+
+<div class="card controls">
+
+  <h2>🎛️ Try changing a pretend well</h2>
+
+  <p>
+    These are abstract demo controls from 0–100,
+    <strong>not real engineering settings</strong>.
+  </p>
+
+  <label for="heat">Illustrative heating level</label>
+
+  <div class="range-row">
+    <input id="heat" type="range"
+           min="0" max="100" value="55">
+    <output id="heatval">55</output>
+  </div>
+
+  <div class="help">
+    Higher means more warming in this imaginary model.
+  </div>
+
+
+  <label for="pump">Illustrative pump activity</label>
+
+  <div class="range-row">
+    <input id="pump" type="range"
+           min="0" max="100" value="55">
+    <output id="pumpval">55</output>
+  </div>
+
+  <div class="help">
+    Higher means more pump activity in the demo.
+  </div>
+
+
+  <label for="retain">Illustrative heat retention</label>
+
+  <div class="range-row">
+    <input id="retain" type="range"
+           min="0" max="100" value="55">
+    <output id="retainval">55</output>
+  </div>
+
+  <div class="help">
+    How slowly the pretend underground area cools.
+  </div>
+
+
+  <button class="action" id="save">
+    Save these as Scenario A
+  </button>
+
+  <button class="action secondary" id="reset">
+    Reset demo
+  </button>
+
+</div>
+
+
+<div class="card">
+
+  <h2>📊 What the pretend model shows</h2>
+
+  <div class="grid"
+       style="grid-template-columns:repeat(2,1fr);gap:10px">
+
+    <div style="background:#eaf2ff;border-radius:12px;padding:14px">
+      <div class="caption">Warmth index</div>
+      <div class="metric" id="warm">—</div>
+      <div class="caption">Demo points, not °C</div>
+    </div>
+
+    <div style="background:#eaf8f3;border-radius:12px;padding:14px">
+      <div class="caption">Flow index</div>
+      <div class="metric" id="flow">—</div>
+      <div class="caption">Demo points, not barrels</div>
+    </div>
+
+    <div style="background:#fff5e7;border-radius:12px;padding:14px">
+      <div class="caption">Energy index</div>
+      <div class="metric" id="energy">—</div>
+      <div class="caption">Illustrative only</div>
+    </div>
+
+    <div style="background:#f1edff;border-radius:12px;padding:14px">
+      <div class="caption">Pump load index</div>
+      <div class="metric" id="load">—</div>
+      <div class="caption">Illustrative only</div>
+    </div>
+
+  </div>
+
+  <p id="explanation"
+     style="margin-top:15px;background:#f1f5fb;padding:13px;border-radius:10px;color:#263d5d">
+  </p>
+
+</div>
+
+</div>
+
+
+<div class="two" style="margin-top:16px">
+
+<div class="card">
+
+  <h2>Illustrative cooling over five steps</h2>
+
+  <svg id="chart"
+       class="chart"
+       viewBox="0 0 480 240"
+       aria-label="Synthetic cooling chart">
+  </svg>
+
+  <div class="legend">
+    <i></i>
+    Your current scenario
+
+    <span id="legendA" style="display:none">
+     　<i class="green"></i>
+      Saved Scenario A
+    </span>
+  </div>
+
+</div>
+
+
+<div class="card">
+
+  <h2>Scenario comparison</h2>
+
+  <p>
+    Save Scenario A, then change the sliders to compare scenarios.
+  </p>
+
+  <table>
+
+    <thead>
+      <tr>
+        <th>Demo index</th>
+        <th>Saved A</th>
+        <th>Current B</th>
+      </tr>
+    </thead>
+
+    <tbody id="comparison">
+      <tr>
+        <td colspan="3">
+          Save Scenario A to begin.
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+
+</div>
+
+</div>
+
 </section>
-<footer>CaseArmor · Team ID 157633 · SIH26120 · Educational concept demonstration using fictional data · Not for real well operation</footer>
+
+
+<section class="panel" id="explain">
+
+<div class="card">
+
+  <h2>🔍 What happens behind the screen?</h2>
+
+  <div class="flow">
+
+    <div class="step">
+      <strong>1. Enter data</strong>
+      <small>
+        You move the three sliders. In a future real project,
+        sensors and historical records would provide the data.
+      </small>
+    </div>
+
+    <div class="arrow">→</div>
+
+    <div class="step">
+      <strong>2. Run a model</strong>
+      <small>
+        Simple demonstration formulas update the warmth,
+        flow and energy indexes.
+      </small>
+    </div>
+
+    <div class="arrow">→</div>
+
+    <div class="step">
+      <strong>3. See the result</strong>
+      <small>
+        The charts and numbers update instantly so you can
+        compare two imaginary scenarios.
+      </small>
+    </div>
+
+  </div>
+
+</div>
+
+
+<div class="two" style="margin-top:16px">
+
+<div class="card">
+
+  <h2>What technology is used here?</h2>
+
+  <table>
+
+    <tr>
+      <th>Technology</th>
+      <th>Simple purpose</th>
+    </tr>
+
+    <tr>
+      <td>HTML</td>
+      <td>Creates the page and buttons.</td>
+    </tr>
+
+    <tr>
+      <td>CSS</td>
+      <td>
+        Makes the dashboard attractive and mobile-friendly.
+      </td>
+    </tr>
+
+    <tr>
+      <td>JavaScript</td>
+      <td>
+        Runs the sliders, sample calculations and charts
+        directly in your browser.
+      </td>
+    </tr>
+
+    <tr>
+      <td>SVG</td>
+      <td>
+        Draws the oil-well picture and line graph.
+      </td>
+    </tr>
+
+  </table>
+
+  <p>
+    This version works offline. It doesn't need a server,
+    login or installation.
+  </p>
+
+</div>
+
+
+<div class="card">
+
+  <h2>What a real digital twin would still need</h2>
+
+  <p>
+    <strong>Real data:</strong>
+    measurements and operating history from an oil well.
+  </p>
+
+  <p>
+    <strong>Engineering model:</strong>
+    verified calculations for underground heating,
+    fluid movement and pump behaviour.
+  </p>
+
+  <p>
+    <strong>Validation:</strong>
+    checking predicted values against real measurements
+    and expert review.
+  </p>
+
+  <p>
+    <strong>Future AI:</strong>
+    only after suitable training data and meaningful
+    testing are available.
+  </p>
+
+  <p>
+    <strong>Secure deployment:</strong>
+    access controls, reliable data connections
+    and safety review.
+  </p>
+
+</div>
+
+</div>
+
+</section>
+
 </main>
+
+
 <script>
-const $=id=>document.getElementById(id);let saved=null;
-document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.tab,.panel').forEach(x=>x.classList.remove('active'));b.classList.add('active');$(b.dataset.tab).classList.add('active');});
-function inputs(){return {heat:+$('heat').value,pump:+$('pump').value,retain:+$('retain').value};}
-function model(s){const warmth=15+0.55*s.heat+0.2*s.retain, flow=Math.max(0,(warmth*0.62)*(s.pump/100)+s.pump*.15),energy=10+.52*s.heat+.43*s.pump,load=Math.max(0,10+.68*s.pump-.13*warmth);return {warmth,flow,energy,load,curve:[0,1,2,3,4].map(i=>15+(warmth-15)*Math.pow(.66+.003*s.retain,i))};}
-const fmt=n=>n.toFixed(1);
-function draw(curve,a){const svg=$('chart'),left=43,top=20,w=410,h=177,min=0,max=100;let out='';for(let n=0;n<=4;n++){let y=top+h-n*h/4;out+=`<line x1="${left}" y1="${y}" x2="${left+w}" y2="${y}" stroke="#dce4f1"/><text x="8" y="${y+4}" font-size="11" fill="#78869b">${n*25}</text>`;}for(let i=0;i<5;i++){let x=left+i*w/4;out+=`<text x="${x-13}" y="223" font-size="11" fill="#78869b">Step ${i+1}</text>`;}function line(arr,color){let points=arr.map((v,i)=>`${left+i*w/4},${top+h-v/100*h}`).join(' ');return `<polyline points="${points}" fill="none" stroke="${color}" stroke-width="3.5" stroke-linejoin="round"/>`+arr.map((v,i)=>`<circle cx="${left+i*w/4}" cy="${top+h-v/100*h}" r="4" fill="${color}"/>`).join('');}out+=line(curve,'#205bd1');if(a)out+=line(a,'#16a78d');svg.innerHTML=out;}
-function update(){let s=inputs(),m=model(s);['heat','pump','retain'].forEach(k=>$(k+'val').textContent=s[k]);['warm','flow','energy','load'].forEach((k,i)=>$(k).textContent=fmt(m[['warmth','flow','energy','load'][i]]));$('explanation').textContent=`With heating ${s.heat}, pump activity ${s.pump} and heat retention ${s.retain}, this imaginary model calculates a warmth index of ${fmt(m.warmth)} and flow index of ${fmt(m.flow)}. Try changing one slider to see which displayed values respond.`;draw(m.curve,saved?.result.curve);$('legendA').style.display=saved?'inline':'none';if(saved){$('comparison').innerHTML=[['Warmth','warmth'],['Flow','flow'],['Energy','energy'],['Pump load','load']].map(([label,key])=>`<tr><td>${label}</td><td>${fmt(saved.result[key])}</td><td>${fmt(m[key])}</td></tr>`).join('');}}
-['heat','pump','retain'].forEach(k=>$(k).addEventListener('input',update));
-$('save').onclick=()=>{saved={settings:inputs(),result:model(inputs())};update();$('save').textContent='Scenario A saved ✓';};
-$('reset').onclick=()=>{saved=null;['heat','pump','retain'].forEach(k=>$(k).value=55);$('save').textContent='Save these as Scenario A';$('comparison').innerHTML='<tr><td colspan="3">Save Scenario A to begin.</td></tr>';update();};
+
+const $ = id => document.getElementById(id);
+
+let saved = null;
+
+
+document.querySelectorAll('.tab').forEach(b => {
+
+  b.onclick = () => {
+
+    document
+      .querySelectorAll('.tab,.panel')
+      .forEach(x => x.classList.remove('active'));
+
+    b.classList.add('active');
+
+    $(b.dataset.tab).classList.add('active');
+
+  };
+
+});
+
+
+function inputs(){
+
+  return {
+    heat:+$('heat').value,
+    pump:+$('pump').value,
+    retain:+$('retain').value
+  };
+
+}
+
+
+function model(s){
+
+  const warmth =
+    15 + 0.55*s.heat + 0.2*s.retain;
+
+  const flow =
+    Math.max(
+      0,
+      (warmth*0.62)*(s.pump/100) + s.pump*.15
+    );
+
+  const energy =
+    10 + .52*s.heat + .43*s.pump;
+
+  const load =
+    Math.max(
+      0,
+      10 + .68*s.pump - .13*warmth
+    );
+
+  return {
+
+    warmth,
+    flow,
+    energy,
+    load,
+
+    curve:[
+      0,1,2,3,4
+    ].map(
+      i =>
+        15 +
+        (warmth-15) *
+        Math.pow(
+          .66+.003*s.retain,
+          i
+        )
+    )
+
+  };
+
+}
+
+
+const fmt = n => n.toFixed(1);
+
+
+function draw(curve,a){
+
+  const svg = $('chart');
+
+  const left = 43;
+  const top = 20;
+  const w = 410;
+  const h = 177;
+
+  let out = '';
+
+  for(let n=0;n<=4;n++){
+
+    let y = top+h-n*h/4;
+
+    out += `
+      <line
+        x1="${left}"
+        y1="${y}"
+        x2="${left+w}"
+        y2="${y}"
+        stroke="#dce4f1"
+      />
+
+      <text
+        x="8"
+        y="${y+4}"
+        font-size="11"
+        fill="#78869b">
+        ${n*25}
+      </text>
+    `;
+
+  }
+
+
+  for(let i=0;i<5;i++){
+
+    let x = left+i*w/4;
+
+    out += `
+      <text
+        x="${x-13}"
+        y="223"
+        font-size="11"
+        fill="#78869b">
+        Step ${i+1}
+      </text>
+    `;
+
+  }
+
+
+  function line(arr,color){
+
+    let points =
+      arr
+      .map(
+        (v,i) =>
+          `${left+i*w/4},${top+h-v/100*h}`
+      )
+      .join(' ');
+
+    return `
+      <polyline
+        points="${points}"
+        fill="none"
+        stroke="${color}"
+        stroke-width="3.5"
+        stroke-linejoin="round"
+      />
+
+      ${
+        arr.map(
+          (v,i) => `
+            <circle
+              cx="${left+i*w/4}"
+              cy="${top+h-v/100*h}"
+              r="4"
+              fill="${color}"
+            />
+          `
+        ).join('')
+      }
+    `;
+
+  }
+
+
+  out += line(curve,'#205bd1');
+
+  if(a)
+    out += line(a,'#16a78d');
+
+  svg.innerHTML = out;
+
+}
+
+
+function update(){
+
+  let s = inputs();
+
+  let m = model(s);
+
+
+  ['heat','pump','retain']
+    .forEach(
+      k => $(k+'val').textContent = s[k]
+    );
+
+
+  ['warm','flow','energy','load']
+    .forEach(
+      (k,i) =>
+        $(k).textContent =
+        fmt(
+          m[
+            ['warmth','flow','energy','load'][i]
+          ]
+        )
+    );
+
+
+  $('explanation').textContent =
+    `With heating ${s.heat}, pump activity ${s.pump} and heat retention ${s.retain}, this imaginary model calculates a warmth index of ${fmt(m.warmth)} and flow index of ${fmt(m.flow)}. Try changing one slider to see which displayed values respond.`;
+
+
+  draw(
+    m.curve,
+    saved?.result.curve
+  );
+
+
+  $('legendA').style.display =
+    saved ? 'inline' : 'none';
+
+
+  if(saved){
+
+    $('comparison').innerHTML =
+      [
+        ['Warmth','warmth'],
+        ['Flow','flow'],
+        ['Energy','energy'],
+        ['Pump load','load']
+      ]
+      .map(
+        ([label,key]) => `
+          <tr>
+            <td>${label}</td>
+            <td>${fmt(saved.result[key])}</td>
+            <td>${fmt(m[key])}</td>
+          </tr>
+        `
+      )
+      .join('');
+
+  }
+
+}
+
+
+['heat','pump','retain']
+  .forEach(
+    k =>
+      $(k).addEventListener(
+        'input',
+        update
+      )
+  );
+
+
+$('save').onclick = () => {
+
+  saved = {
+    settings:inputs(),
+    result:model(inputs())
+  };
+
+  update();
+
+  $('save').textContent =
+    'Scenario A saved ✓';
+
+};
+
+
+$('reset').onclick = () => {
+
+  saved = null;
+
+  ['heat','pump','retain']
+    .forEach(
+      k => $(k).value = 55
+    );
+
+  $('save').textContent =
+    'Save these as Scenario A';
+
+  $('comparison').innerHTML =
+    '<tr><td colspan="3">Save Scenario A to begin.</td></tr>';
+
+  update();
+
+};
+
+
 update();
-</script></body></html>
+
+</script>
+
+</body>
+  </html>
